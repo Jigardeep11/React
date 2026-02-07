@@ -1,0 +1,134 @@
+/* --- 1. Global Setup & Variables --- */
+:root {
+  --primary-orange: #fc8019;
+  --text-dark: #282c3f;
+  --text-light: #686b78;
+  --rating-green: #48c479;
+  --bg-color: #ffffff;
+  --border-color: #d3d3d3;
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 2. Header & Logo Styling --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 80px;
+  background-color: #fff;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 100px; /* Constrains the logo width */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  gap: 30px;
+}
+
+.nav-items > ul > li {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-items > ul > li:hover {
+  color: var(--primary-orange);
+}
+
+/* --- 3. Body & Search Layout --- */
+.body {
+  padding: 20px 40px;
+}
+
+.search-bar {
+  margin: 20px 0 40px 0;
+  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  width: 300px;
+  color: var(--text-light);
+  cursor: text;
+  background-color: #f9f9f9;
+}
+
+/* --- 4. The Restaurant Grid --- */
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the cards on the screen */
+  gap: 30px;
+}
+
+/* --- 5. Individual Restaurant Card --- */
+.res-card {
+  width: 280px;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid transparent; /* Hidden border until hover */
+  cursor: pointer; /* THE POINTER ADDED */
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+/* Hover Effect: Border Glow and Lift */
+.res-card:hover {
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transform: translateY(-5px); /* Gentle lift */
+}
+
+.res-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* Ensures image isn't squished */
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.res-card h3 {
+  color: var(--text-dark);
+  font-size: 19px;
+  margin-bottom: 5px;
+  /* Truncate long names */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.res-card h4 {
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+/* Specific styling for the star rating to make it pop */
+.res-card h4:nth-of-type(2) {
+  font-weight: 700;
+  color: var(--rating-green);
+  margin-top: 8px;
+}

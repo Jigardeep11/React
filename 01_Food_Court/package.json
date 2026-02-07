@@ -1,0 +1,23 @@
+{
+  "name": "namste_react",
+  "version": "1.0.0",
+  "description": "This is Namaste React Course.",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Jigar",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
